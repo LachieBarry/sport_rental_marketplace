@@ -12,11 +12,13 @@ class ListingsController < ApplicationController
   end
 
   def new
-    @listing.new
+    @listing = Listing.new
   end
 
   def create
-
+    @listing = Listing.new(listing_params)
+    @listing.save
+    redirect_to listings_path
   end
 
   private
