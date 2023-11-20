@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
   # Will need a before action I think, one to allow non-users to search still?
   # Do photos get added here? Sounds like a tomorrow job
-  before_action :set_listing, only: [:show]
+  before_action :set_listing, only: [:show, :edit]
 
   def index
     @listings = Listing.all
@@ -25,11 +25,13 @@ class ListingsController < ApplicationController
   end
 
   def edit
-
+    set_listing
   end
 
   def update
-
+    set_listing
+    @listing.update(listing_params)
+    redirect_to listing_path(@listing)
   end
 
   private
