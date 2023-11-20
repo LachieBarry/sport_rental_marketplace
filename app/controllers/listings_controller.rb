@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
   # Do photos get added here? Sounds like a tomorrow job
 
   def index
-
+    @listings = Listing.all
   end
-  
+
 end
