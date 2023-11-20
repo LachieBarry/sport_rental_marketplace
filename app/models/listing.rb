@@ -9,4 +9,3 @@ class Listing < ApplicationRecord
   validates :hourly_price, numericality: true
   validates :sport_type, inclusion: { in: valid_sports, message: 'Invalid sport type.' }
 end
-# Listing.create!(title: "Sherrin Footy", sport_type: "AFL", description: "Well-loved Sherrin Footy, pumped it the other day", hourly_price: 1)
