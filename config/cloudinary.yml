@@ -1,0 +1,11 @@
+development:
+  cloud_name: "dttxk4mnc"
+  api_key: "581822453932312"
+  api_secret: "***************************"
+  secure: true
+
+production:
+  cloud_name: "dttxk4mnc"
+  api_key: "581822453932312"
+  api_secret: "***************************"
+  secure: true
