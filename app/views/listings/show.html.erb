@@ -1,9 +1,0 @@
-<h2><%= @listing.title %></h2>
-<br>
-type: <%= @listing.sport_type %>
-<br>
-price: <%= @listing.hourly_price %>
-<br>
-desc: <%= @listing.description %>
-<br>
-<%= link_to "Delete", listing_path(@listing), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}, class: 'btn btn-danger' %>
