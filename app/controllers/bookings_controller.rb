@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
     @booking.total_price = ((@booking.end_date - @booking.start_date) / 3600) * @listing.hourly_price
     @booking.save
+    redirect_to listing_path(@listing)
   end
 
   private
