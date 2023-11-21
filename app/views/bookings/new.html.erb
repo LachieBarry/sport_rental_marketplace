@@ -1,0 +1,6 @@
+<h3>Create a new booking</h3>
+<%= simple_form_for [@listing, @booking] do |f| %>
+  <%= f.input :start_date, as: :datetime %>
+  <%= f.input :end_date, as: :datetime %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

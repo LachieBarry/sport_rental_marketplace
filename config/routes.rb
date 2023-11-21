@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  resources :listings
+  resources :listings do
+    resources :bookings, only: [:new, :create, :show]
+  end
   # resources :bookings will nest here
 end
