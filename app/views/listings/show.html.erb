@@ -1,3 +1,5 @@
+<h1>Listing Details</h1>
+
 <h2><%= @listing.title %></h2>
 <br>
 type: <%= @listing.sport_type %>
@@ -11,3 +13,6 @@ desc: <%= @listing.description %>
   <h2><%= link_to title, listing_booking_path(booking)%></h2>
 <% end %>
 <%= link_to "Delete", listing_path(@listing), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}, class: 'btn btn-danger' %>
+<h2>User:</h2>
+<p><%= @listing.user.name %></p>
+<p><%= @listing.user.email %></p>

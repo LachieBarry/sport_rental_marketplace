@@ -52,4 +52,9 @@ class ListingsController < ApplicationController
     # Finds model per id
     @listing = Listing.find(params[:id])
   end
+
+  def current_user
+    # Finds user per id
+    @user = User.find(params[:id])
+  end
 end
