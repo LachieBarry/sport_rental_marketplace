@@ -16,6 +16,10 @@ class BookingsController < ApplicationController
     redirect_to listing_path(@listing)
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   private
 
   def booking_params
