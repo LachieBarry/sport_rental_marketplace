@@ -1,0 +1,14 @@
+<%= @booking %>
+<br>
+start: <%= @booking.start_date %>
+<br>
+end: <%= @booking.end_date %>
+<br>
+total: <%= @booking.total_price %>
+<br>
+<%# Link the below to to profiles for the user? Also, make sure to find the correct user for owner once updated to main %>
+owner: <%= Listing.find(@booking.listing_id) %>
+<br>
+renter: <%= User.find(@booking.user_id).first_name %>, <%= User.find(@booking.user_id).last_name %>
+<br>
+<%= link_to "Delete", booking_path(@booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}, class: 'btn btn-danger' %>

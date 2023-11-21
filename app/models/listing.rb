@@ -1,6 +1,7 @@
 class Listing < ApplicationRecord
+  has_many :bookings
   belongs_to :user
-  # need to implment photos too at some point
+  
   valid_sports = ['AFL', 'Gridiron', 'Rugby', 'Netball', 'Cricket', 'Baseball', 'Basketball', 'Softball', 'Golf', 'Tennis', 'Frisbee', 'Volleyball', 'Cycling', 'BMX', 'Martial Arts', 'Gymnastics', 'Curling', 'Ice Skating', 'Ice Hockey', 'Field Hockey', 'Skateboarding', 'Snowboarding', 'Skiing', 'Surfing', 'Sledding', 'Rowing', 'Water Polo', 'Kickball', 'Dodgeball', 'Lacrosse', 'Rollerskating', 'Handball', 'Dodgeball', 'Hurling', 'Polo', 'Badmitton', 'Squash', 'Table Tennis', 'Other']
 
   validates :title, :description, :sport_type, :hourly_price, presence: true
