@@ -6,6 +6,6 @@
   <%= f.input :sport_type, collection: valid_sports %>
   <%= f.input :hourly_price, placeholder: 'Price per Hour', as: :integer %>
   <%= f.input :description, placeholder: 'Description' %>
-  <%# <%= f.input :photo, as: :file %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
