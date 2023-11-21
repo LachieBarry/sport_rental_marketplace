@@ -10,3 +10,5 @@ total: <%= @booking.total_price %>
 owner: <%= Listing.find(@booking.listing_id) %>
 <br>
 renter: <%= User.find(@booking.user_id).first_name %>, <%= User.find(@booking.user_id).last_name %>
+<br>
+<%= link_to "Delete", booking_path(@booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}, class: 'btn btn-danger' %>

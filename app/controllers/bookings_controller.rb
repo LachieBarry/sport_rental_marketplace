@@ -17,7 +17,14 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @booking = Booking.find(params[:listing_id])
+  end
+
+  def destroy
     @booking = Booking.find(params[:id])
+    @listing = Listing.find(@booking.listing_id)
+    @booking.destroy
+    redirect_to listing_path(@listing), status: :see_other
   end
 
   private

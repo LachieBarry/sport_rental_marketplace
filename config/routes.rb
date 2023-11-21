@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   resources :listings do
     resources :bookings, only: [:new, :create, :show]
   end
-  # resources :bookings will nest here
+  resources :bookings, only: [:destroy]
 end
