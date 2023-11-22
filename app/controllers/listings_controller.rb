@@ -45,7 +45,7 @@ class ListingsController < ApplicationController
   def listing_params
     # Protects against CRLF injection
     # Need to pass photo later
-    params.require(:listing).permit(:title, :sport_type, :description, :hourly_price)
+    params.require(:listing).permit(:title, :sport_type, :description, :hourly_price, :photo)
   end
 
   def set_listing
