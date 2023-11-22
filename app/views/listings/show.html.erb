@@ -13,7 +13,5 @@ desc: <%= @listing.description %>
   <h2><%= link_to title, listing_booking_path(booking)%></h2>
 <% end %>
 <%= link_to "Delete", listing_path(@listing), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}, class: 'btn btn-danger' %>
-<h2>User:</h2>
-<p><%= @listing.user.name %></p>
-<p><%= @listing.user.email %></p>
+<%= cl_image_tag @listing.photo.key  %>
 <%= link_to "Return to Listings", listings_path, class: "btn btn-success" %>
