@@ -76,4 +76,6 @@ Rails.application.configure do
 
   # Log the query plan for queries taking more than this (works
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.active_storage.service = :cloudinary
 end
