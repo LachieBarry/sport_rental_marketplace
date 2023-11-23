@@ -6,6 +6,12 @@ class BookingsController < ApplicationController
     @booking.save
   end
 
+  def reject
+    @booking = Booking.find(params[:listing_id])
+    @booking.accepted = 2
+    @booking.save
+  end
+
   def index
     @listing_ids = []
     @listings_filtered = Listing.where(user_id: current_user)

@@ -10,9 +10,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   get '/listings/:listing_id/bookings/:id/show_confirm', to: "bookings#show_confirm", as: "show_confirm"
   post '/listings/:listing_id/bookings/:id/show_confirm', to: "bookings#confirm", as: "confirm"
+  get '/listings/:listing_id/bookings/:id/show_reject', to: "bookings#show_reject", as: "show_reject"
+  post '/listings/:listing_id/bookings/:id/show_reject', to: "bookings#reject", as: "reject"
 
   resources :listings do
-    resources :bookings, only: [:new, :create, :show, :index]
+    resources :bookings, only: [:new, :create, :show]
   end
-  resources :bookings, only: [:destroy]
+  resources :bookings, only: [:destroy, :index]
 end
