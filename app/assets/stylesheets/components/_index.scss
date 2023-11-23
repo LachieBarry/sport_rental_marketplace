@@ -4,3 +4,16 @@
  @import "form_legend_clear";
 @import "navbar";
 @import "login_form";
+@import "banner";
+@import "footer";
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+  }
+
+  h1 {
+    text-align: center
+}

@@ -1,0 +1,13 @@
+<h2 class="w-100 text-center my-3">Check out our latest Sports available for rent</h2>
+<div class="d-flex justify-content-center">
+   <% @bookings.each do |booking| %>
+    <div class="card" style="width: 18rem;">
+      <%# <%= cl_image_tag , class:'p-image', height: 300, width: 300, crop: :fill %> 
+      <div class="card-body text-center">
+        <h5 class="card-title"><%=listing.title%></h5>
+        <p class="card-text"><%=listing.description%></p>
+        <%= link_to 'I choose you!', listing_path(listing), class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+</div>

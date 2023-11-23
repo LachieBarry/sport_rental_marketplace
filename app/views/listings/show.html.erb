@@ -13,9 +13,32 @@ desc: <%= @listing.description %>
   <h2><%= link_to title, listing_booking_path(booking)%></h2>
 <% end %>
 
-<%= cl_image_tag(@listing.photo.key) %>
+<%# <%= cl_image_tag(@listing.photo.key) %> 
 <div>
 <%= link_to "Return to Listings", listings_path, class: "btn btn-success" %>
 <%= link_to "Delete", listing_path(@listing), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}, class: 'btn btn-danger' %>
 <%= link_to "Book for rent", new_listing_booking_path(@listing), class: 'btn btn-primary' %>
 </div>
+
+
+<div class = ''>
+
+  <div class="container pt-0 align-top">
+    <%= render "shared/listing_show" %>
+    <%= render "shared/footer" %>
+    <%= render "shared/flashes" %>
+    <%= render "shared/listing_show" %>
+    <%= render "shared/navbar" %>
+    
+  </div>
+
+
+
+  <div class= 'back-btn'>
+  </div>
+</div>
+
+<div class="container">
+<%= link_to "Go Back", listings_path %>
+</div>
+

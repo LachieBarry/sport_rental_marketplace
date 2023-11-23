@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>SportRentalMarketplace</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-    
-  </head>
+<head>
+  <title>Sport For Rent</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
+  <%= javascript_tag 'application', 'data-turbolinks-track': 'reload', defer: true %> 
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+
+<body>
+<div> 
+
+
+  <% if notice %>
+    <div class="notice"><%= notice %></div>
+  <% end %>
+  <% if alert %>
+    <div class="alert"><%= alert %></div>
+  <% end %>
+  <div>
+    <%= render 'shared/navbar' %>
+  </div>
+  <%= yield %>
+  <div>
+    <%= render 'shared/footer' %>
+  </div>
+</body>
+
 </html>

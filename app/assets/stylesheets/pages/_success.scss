@@ -1,0 +1,31 @@
+
+.container {
+    margin-top: 60px
+  }
+  
+  
+  .parent {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-left: 150px;
+    margin-top: 60px
+  }
+  .image1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    border: 4px #ff8a00 solid;
+    border-radius: 50%
+  }
+  .image2 {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    height: 60px;
+    width: 60px;
+    filter: drop-shadow(10px 10px 10px yellow);
+  }
+  
+  
+  

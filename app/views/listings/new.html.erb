@@ -1,3 +1,8 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4">
+    <div class="form-login"> 
+
 <% valid_sports = ['AFL', 'Gridiron', 'Rugby', 'Netball', 'Cricket', 'Baseball', 'Basketball', 'Softball', 'Golf', 'Tennis', 'Frisbee', 'Volleyball', 'Cycling', 'BMX', 'Martial Arts', 'Gymnastics', 'Curling', 'Ice Skating', 'Ice Hockey', 'Field Hockey', 'Skateboarding', 'Snowboarding', 'Skiing', 'Surfing', 'Sledding', 'Rowing', 'Water Polo', 'Kickball', 'Dodgeball', 'Lacrosse', 'Rollerskating', 'Handball', 'Dodgeball', 'Hurling', 'Polo', 'Badmitton', 'Squash', 'Table Tennis', 'Other']  %>
 
 <h3>Create a new listing</h3>
@@ -9,3 +14,8 @@
   <%= f.input :photo, as: :file %>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
+
+ <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

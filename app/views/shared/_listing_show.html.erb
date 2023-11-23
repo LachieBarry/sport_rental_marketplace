@@ -1,0 +1,27 @@
+<% require 'date' %>
+
+<div class="card mr-0 border-0 align-top">
+    <div class="heading">
+         <h1> <%= @listing.sport_type %> </h1>
+        <%# <%= cl_image_tag @listing.sport_type.artwork.key, height: 300, width: 300, crop: :fill %> 
+        </div>
+        <div class="card-body">
+        <h5 class="card-title"><%= @listing.title %></h5>
+        <div class="card-text">
+            <p>description: <br><%= @listing.description %></p>
+        </div>
+        <h2 class="card-pokemon-pricing">$ <%= @listing.hourly_price.to_i.to_s %> / hour</h2>
+        <p>owner: <%= @listing.first_name.capitalize %></p>
+    </div>
+</div>
+
+
+<div class="card ml-0 border-0 p-5 w-75">
+    <div class="container card-btn pb-4">
+        <%= link_to 'Book it!', new_listing_booking_path(@listing), class:'btn btn-primary rounded' %>
+    </div>
+</div>
+
+  <%= render 'shared/footer' %>
+  <%= render 'shared/navbar' %>
+   <%= render 'shared/history_card_display' %>

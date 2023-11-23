@@ -6,8 +6,14 @@
 // External libraries
 @import "bootstrap";
 @import "font-awesome";
+// @import "bootstrap/scss/bootstrap";
+// @import "font-awesome-sprockets";
 
 // Your CSS partials
-@import "components/index";
+@import "components/_index";
 @import "pages/index";
 
+@import "components/_navbar";
+@import "components/_footer";
+@import "pages/success";
+@import "pages/new";
