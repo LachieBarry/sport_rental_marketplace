@@ -1,0 +1,9 @@
+<% valid_sports = ['AFL', 'Gridiron', 'Rugby', 'Netball', 'Cricket', 'Baseball', 'Basketball', 'Softball', 'Golf', 'Tennis', 'Frisbee', 'Volleyball', 'Cycling', 'BMX', 'Martial Arts', 'Gymnastics', 'Curling', 'Ice Skating', 'Ice Hockey', 'Field Hockey', 'Skateboarding', 'Snowboarding', 'Skiing', 'Surfing', 'Sledding', 'Rowing', 'Water Polo', 'Kickball', 'Dodgeball', 'Lacrosse', 'Rollerskating', 'Handball', 'Dodgeball', 'Hurling', 'Polo', 'Badmitton', 'Squash', 'Table Tennis', 'Other']  %>
+<%= simple_form_for [@listing] do |f| %>
+  <%= f.input :title, placeholder: 'Name' %>
+  <%= f.input :sport_type, collection: valid_sports %>
+  <%= f.input :hourly_price, placeholder: 'Price per Hour', as: :integer %>
+  <%= f.input :description, placeholder: 'Description' %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
