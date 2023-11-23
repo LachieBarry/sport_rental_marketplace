@@ -1,38 +1,33 @@
-<h1>Listing Details</h1>
-
-<h2><%= @listing.title %></h2>
-<br>
-type: <%= @listing.sport_type %>
-<br>
-price: <%= @listing.hourly_price %>
-<br>
-desc: <%= @listing.description %>
-<br>
-<% @listing.bookings.each do |booking| %>
-  <% title = User.find(booking.user_id)%>
-  <h2><%= link_to title, listing_booking_path(booking)%></h2>
-<% end %>
-
-<%# <%= cl_image_tag(@listing.photo.key) %> 
-<div>
-<%= link_to "Return to Listings", listings_path, class: "btn btn-success" %>
-<%= link_to "Delete", listing_path(@listing), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}, class: 'btn btn-danger' %>
-<%= link_to "Book for rent", new_listing_booking_path(@listing), class: 'btn btn-primary' %>
-</div>
-
-
-<div class = ''>
-
-  <div class="container pt-0 align-top">
-    <%= render "shared/listing_show" %>
-    <%= render "shared/footer" %>
-    <%= render "shared/flashes" %>
-    <%= render "shared/listing_show" %>
-    <%= render "shared/navbar" %>
-    
+<div container>
+  <div class="card-listing">
+    <img class ="card-listing> img" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2 class ="card-listing h2" ><%= @listing.title %></h2>
+        <p class ="card-listing p "> Type:<%= @listing.sport_type %></p>
+        <p class ="card-listing p ">Price:<%= @listing.hourly_price %></p>
+        <p class ="card-listing .card-listing-infos">Description<%= @listing.description %></p>
+        <h2 class="card-trip-pricing">$15.99</h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      <div>
+        
+      </div>
+    </div>
   </div>
 
+  <div container>
+    <% @listing.bookings.each do |booking| %>
+    <% title = User.find(booking.user_id)%>
+    <h2><%= link_to title, listing_booking_path(booking)%></h2>
+    <% end %>
 
+    <%# <%= cl_image_tag(@listing.photo.key) %> 
+    <%= link_to "Return to Listings", listings_path, class: "btn btn-success" %>
+  <%= link_to "Delete", listing_path(@listing), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}, class: 'btn btn-danger' %>
+  </div>
+
+  <div class = ''>
+  </div>
 
   <div class= 'back-btn'>
   </div>
@@ -42,3 +37,4 @@ desc: <%= @listing.description %>
 <%= link_to "Go Back", listings_path %>
 </div>
 
+<%render "shared/navbar"%>

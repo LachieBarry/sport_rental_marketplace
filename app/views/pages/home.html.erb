@@ -1,13 +1,64 @@
+<br><div class= "container" >
+<form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </div>
+</form>
+</div>
 
-<div class="banner">
-  <div class="banner-content text-center">
-     <h1>Sport Rental</h1>
-    <p>Share and save together</p>
-    <%= link_to "Create a sport rental list", listings_path, class: "btn btn-success" %>
+    <div class="container">
+    <div class="row">
+    <div class="col-md-4">
+    <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+    <h2>Kookaburra Tuff Pitch </h2>
+    <p><strong>Price:</strong> $5/hour</p>
+    <p> <strong>Sport type:</strong>Cricket Ball </p>
+    <p><strong>Owner:</strong> John Lockett</p>
+    <a class="btn btn-primary" href="http://localhost:3000/listings/10">Rent now</a>
+    </div>
+  </div>
+
+    <div class="cards">
       </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+    <h2>Kookaburra Tuff Pitch </h2>
+    <p><strong>Price:</strong> $5/hour</p>
+    <p> <strong>Sport type:</strong>Cricket Ball </p>
+    <p><strong>Owner:</strong> John Lockett</p>
+    <a class="btn btn-primary" href="http://localhost:3000/listings/10">Rent now</a>
+    </div>
+  </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+    <h2>Kookaburra Tuff Pitch</h2>
+    <p><strong>Price:</strong> $5/hour</p>
+    <p> <strong>Sport type:</strong>Cricket Ball </p>
+    <p><strong>Owner:</strong> John Lockett</p>
+    <a class="btn btn-primary" href="http://localhost:3000/listings/10">Rent</a>
+    </div>
     
+  </div>
+ 
+ 
+ <div> <%= link_to "sport rental list", listings_path, class: "btn btn-success" %> </div >
+      </div>
+    </div>
+  </div>
+</div>
     <div>
-    
+<%render "shared/navbar"%>
     </div>
   </div>
 </div>

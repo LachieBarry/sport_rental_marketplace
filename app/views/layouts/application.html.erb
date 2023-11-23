@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Sport For Rent</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -8,13 +9,27 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
   <%= javascript_tag 'application', 'data-turbolinks-track': 'reload', defer: true %> 
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Sport for Rental <strong></strong></h1>
+    <%= link_to "Book now", "#", class: "btn btn-flat" %>
+    
+    </div>
+
+  </div>
+
+</div>
+
+
+
 </head>
 
-
 <body>
-<div> 
 
 
+
+ 
   <% if notice %>
     <div class="notice"><%= notice %></div>
   <% end %>
