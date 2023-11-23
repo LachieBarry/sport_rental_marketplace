@@ -1,8 +1,59 @@
-ALL LISTINGS
 
-<ul>
+<%# <ul>
   <% @listings.each do |listing| %>
-  <h2><%= link_to listing.title, listing_path(listing)%></h2>
-  <% end %>
-</ul>
+  <%# <h2><%= link_to listing.title, listing_path(listing)</h2> %>
+  <%# <% end %>
+<%# </ul> %>
+
+
+<div style="background-image: url();">
+<%# 
+<div class = 'p-5'>
+  <h1>Sport For Rent</h1>
+</div> %>
+
+
+<div class= 'container'>
+  <%= form_tag listings_path, method: :get do %>
+  <%= text_field_tag :query,
+  params[:query],
+  class: "form-control form-find",
+    placeholder: "Find your sport equiment"%>
+    <button class="btn btn-flat"><i class="fas fa-search"></i></button></div>
+
+    <% if params[:query].present? %>
+    <%= link_to "Go Back", listings_path, class: "btn btn-search" %>
+    <% end %>
+    <% end %>
+</div>
+
+
+  <div class="container">
+    <div class="grid-card">
+     <% @listings.each do |listing| %>
+  <%# <h2><%= link_to listing.title, listing_path(listing)</h2> %>
+      <div class="card-image" style="width: 16rem;">
+        <%# <%= cl_image_tag listing.listing_id, class:'p-image', height: 200, width: 200, crop: :fill %>
+         <%# <%= image_tag listing._url, alt: movie.title, class: "movie-img rounded-top" %> 
+        <div class="card-body">
+          <h5 class="card-title"><%= listing.title %></h5>
+          <div class="card-text">
+<!--        <strong> What it is like:</strong> <br>
+            <%= listing.description %> <br> -->
+            <strong>Price:</strong> $ <%= listing.hourly_price.to_i.to_s %> / Hour<br>
+            <strong>Sport type:</strong> <%= listing.sport_type %> <br>
+            <strong>Owner:</strong> <%= listing.user.first_name.capitalize %> <br>
+
+
+          </div>
+          <div class='grid-card' style='display: flex'>
+          <%= link_to 'Book NOW!', new_listing_booking_path(listing), class:'btn', style:'background-color: #ff8a00; color: white;'  %>
+          <%= link_to 'Details', listing_path(listing), class:'btn', style:'background-color: grey; color: white;' %>
+        </div>
+      </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 <%= link_to "Create a new list", new_listing_path, class: "btn btn-success" %>

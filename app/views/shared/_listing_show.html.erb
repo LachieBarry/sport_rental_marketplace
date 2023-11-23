@@ -10,7 +10,7 @@
         <div class="card-text">
             <p>description: <br><%= @listing.description %></p>
         </div>
-        <h2 class="card-pokemon-pricing">$ <%= @listing.hourly_price.to_i.to_s %> / hour</h2>
+        <h2 class="card-listing-pricing">$ <%= @listing.hourly_price.to_i.to_s %> / hour</h2>
         <p>owner: <%= @listing.first_name.capitalize %></p>
     </div>
 </div>
@@ -22,6 +22,6 @@
     </div>
 </div>
 
-  <%= render 'shared/footer' %>
+  <%= render 'components/footer' %>
   <%= render 'shared/navbar' %>
    <%= render 'shared/history_card_display' %>

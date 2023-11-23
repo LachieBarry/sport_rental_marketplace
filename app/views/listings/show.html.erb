@@ -1,6 +1,6 @@
 <div container>
   <div class="card-listing">
-    <img class ="card-listing> img" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <img class ="card-listing> img" src="https://res.cloudinary.com/dk0declv9/image/upload/v1700782824/sports-equipment_g2ra4e.webp" />
     <div class="card-trip-infos">
       <div>
         <h2 class ="card-listing h2" ><%= @listing.title %></h2>
@@ -14,7 +14,7 @@
       </div>
     </div>
   </div>
-
+ <h2> Booking for rent a sport equipment</h2>
   <div container>
     <% @listing.bookings.each do |booking| %>
     <% title = User.find(booking.user_id)%>
