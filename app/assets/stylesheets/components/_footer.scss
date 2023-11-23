@@ -1,0 +1,27 @@
+.footer-lewagon {
+  position: sticky;
+  bottom: 0px;
+  justify-content: space-between;
+  background: #252525;
+  height: 80px;
+  border-top: #009F6B 4px solid;
+}
+
+p {
+  color: white;
+}
+
+.footer-inner-container {
+  margin: auto;
+  width: 75%;
+  height: 88px;
+
+}
+
+.footer-lewagon .footer-collapse {
+  flex-grow: 0;
+}
+
+.footer-lewagon .footer-brand img {
+  width: 40px;
+}
