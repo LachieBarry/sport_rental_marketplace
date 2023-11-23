@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
+  get '/listings/:listing_id/bookings/:id/show_confirm', to: "bookings#show_confirm", as: "show_confirm"
+  post '/listings/:listing_id/bookings/:id/show_confirm', to: "bookings#confirm", as: "confirm"
+
   resources :listings do
-    resources :bookings, only: [:new, :create, :show]
+    resources :bookings, only: [:new, :create, :show, :index]
   end
   resources :bookings, only: [:destroy]
 end

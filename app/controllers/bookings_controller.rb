@@ -1,5 +1,20 @@
 class BookingsController < ApplicationController
 
+  def confirm
+    @booking = Booking.find(params[:listing_id])
+    @booking.accepted = 1
+    @booking.save
+  end
+
+  def index
+    @listing_ids = []
+    @listings_filtered = Listing.where(user_id: current_user)
+    @listings_filtered.each do |listing|
+      @listing_ids.push(listing.id)
+    end
+    @owner_bookings = Booking.where(listing_id: @listing_ids)
+  end
+
   def new
     @listing = Listing.find(params[:listing_id])
     @booking = Booking.new

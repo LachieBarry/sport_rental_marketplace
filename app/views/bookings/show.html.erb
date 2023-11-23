@@ -6,6 +6,8 @@ end: <%= @booking.end_date %>
 <br>
 total: <%= @booking.total_price %>
 <br>
+accepted: <%= @booking.accepted %>
+<br>
 <%# Link the below to to profiles for the user? Also, make sure to find the correct user for owner once updated to main %>
 owner: <%= Listing.find(@booking.listing_id) %>
 <br>
