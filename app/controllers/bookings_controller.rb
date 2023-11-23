@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def confirm
     @booking = Booking.find(params[:listing_id])
     @booking.accepted = 1

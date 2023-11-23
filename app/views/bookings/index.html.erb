@@ -1,8 +1,6 @@
 Your Rental Requests
-<%= @owner_bookings %>
 <br>
 <% @owner_bookings.each do |booking| %>
   <%= booking %>, <%= booking.accepted %>, <%= booking.listing_id %>
   <br>
-  <%= button_to "confirm", action: "confirm" %>
 <% end %>
