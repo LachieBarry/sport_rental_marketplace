@@ -2,7 +2,7 @@ class Listing < ApplicationRecord
   # active storage
   has_one_attached :photo
   # bookings
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   belongs_to :user
   # geocoder gem
   # geocoded_by :address
