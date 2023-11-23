@@ -1,0 +1,6 @@
+Your Rental Requests
+<br>
+<% @owner_bookings.each do |booking| %>
+  <%= booking %>, <%= booking.accepted %>, <%= booking.listing_id %>
+  <br>
+<% end %>

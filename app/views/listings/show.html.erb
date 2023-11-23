@@ -21,8 +21,4 @@ add-edit-button-to-listing-show
 <%= link_to "Delete", listing_path(@listing), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}, class: 'btn btn-danger' %>
 <%= link_to "Borrow", new_listing_booking_path(@listing), class: 'btn btn-primary' %>
 
-<%= link_to "Return to Listings", listings_path, class: "btn btn-success" %>
-<%= link_to "Delete", listing_path(@listing), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing? This will cancel all bookings for the listing."}, class: 'btn btn-danger' %>
-<%= link_to "Book for rent", new_listing_booking_path(@listing), class: 'btn btn-primary' %>
-
 </div>
