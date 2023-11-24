@@ -1,6 +1,30 @@
-Your Rental Requests
-<br>
+<%= render 'shared/navbar' %>
+<%# SLIGHT BUG, some text renders over the navbar -- dont scroll down too far in demo %>
+<div class="body_container shadow vh-100">
+
+<h2 class="mb-2 text-dark text-center m-auto p-4"> Your Borrow Requests </h2>
+
 <% @owner_bookings.each do |booking| %>
-  <%= booking %>, <%= booking.accepted %>, <%= booking.listing_id %>
-  <br>
+  <div class="notification m-4">
+    <% listing = Listing.find(booking.listing_id) %>
+    <%= cl_image_tag(listing.photo.key) %>
+    <div class="notification-content">
+      <p class="mb-2 text-dark"><small><%= booking.created_at %></small></p>
+      <p class="mb-2 text-dark"><%= User.find(booking.user_id).first_name %> <%= User.find(booking.user_id).last_name %> would like to borrow <strong><%= link_to listing.title, listing_path(listing), class: "green-text" %></strong></p>
+    </div>
+
+    <div class="notification-actions">
+      <% owner = User.find(listing.user_id)%>
+      <% if owner == current_user %>
+        <%= link_to "View", listing_booking_path(booking, listing.id), class: "btn btn-green" %>
+      <% end %>
+    </div>
+  </div>
 <% end %>
+
+
+
+
+</div>
+
+<%= render 'shared/footer' %>

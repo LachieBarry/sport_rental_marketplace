@@ -1,0 +1,48 @@
+.notification {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid #B8E0D3;
+  border-radius: 8px;
+}
+
+.notification .notification-content {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.notification p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.notification small {
+  color: #009F6B;
+  font-weight: bold;
+}
+.notification .notification-actions {
+  opacity: 0;
+  display: flex;
+  transition: ease .3s;
+}
+
+.notification:hover .notification-actions {
+  opacity: 1;
+}
+
+.notification .notification-actions .link-button {
+  color: #009F6B;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.notification .notification-actions .link-button:hover {
+  color: #252525;
+}
+
+.green-text {
+  color: #009F6B;
+  text-decoration: none;
+}

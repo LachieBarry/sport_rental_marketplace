@@ -1,0 +1,22 @@
+.home-background {
+  background: #252525;
+  height: 100vh;
+  width: 100vw;
+}
+
+.logo-home {
+  background-image: asset-url("Logo-Big.jpg");
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+}
+
+.text-invisible {
+  text-decoration: none;
+  color: #252525;
+  opacity: 0;
+  font-size: 256px;
+}

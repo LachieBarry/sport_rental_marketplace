@@ -1,24 +1,82 @@
-<%= @booking %>
-<br>
-start: <%= @booking.start_date %>
-<br>
-end: <%= @booking.end_date %>
-<br>
-total: <%= @booking.total_price %>
-<br>
-accepted: <%= @booking.accepted %>
-<br>
-<%# Link the below to to profiles for the user? Also, make sure to find the correct user for owner once updated to main %>
-owner: <%= Listing.find(@booking.listing_id) %>
-<br>
-renter: <%= User.find(@booking.user_id).first_name %>, <%= User.find(@booking.user_id).last_name %>
-<br>
-<%= link_to "Delete", booking_path(@booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}, class: 'btn btn-danger' %>
-<%= link_to Listing.find(params[:id]).title, listing_path(params[:id]), class: 'btn btn-primary' %>
+<style>
+.btn-green {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  width: 120px;
+  background: #009F6B;
+  transition: 0.3s ease;
+}
 
+.btn-green:hover {
+  background: #055a3e;
+  color: white;
+}
+
+.btn-red {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  width: 120px;
+  background: #C40223;
+  transition: 0.3s ease;
+}
+
+.btn-red:hover {
+  background: #7b0317;
+  color: white;
+}
+</style>
 <% listing = Listing.find(@booking.listing_id) %>
 <% owner = User.find(listing.user_id)%>
-<% if owner == current_user %>
-  <%= button_to "confirm", action: "confirm" %>
-  <%= button_to "reject", action: "reject" %>
-<% end %>
+
+
+<%= render 'shared/navbar' %>
+<% listing = Listing.find(@booking.listing_id) %>
+<%# SLIGHT BUG, some text renders over the navbar -- dont scroll down too far in demo %>
+<div class="body_container shadow vh-100">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-start p-5">
+        <div class="bg-white rounded shadow"><%= cl_image_tag(listing.photo.key, class:" display-photo") %>
+        </div>
+        <div class="mb-2 text-dark">
+          <h5 class="m-4 listing-show-heading"> <%= listing.title %></h5>
+          <p class="m-4 listing-subheading"> <%= image_tag "basketball-solid.svg", alt: "sport_type_icon", height: "25"%> <%= listing.sport_type %></p>
+          <p class="m-4 listing-body">        <%= image_tag "dollar-sign-solid.svg", alt: "sport_type_icon", height: "16"%> <%= listing.hourly_price %></p>
+          <% borrower_first_name = User.find(@booking.user_id).first_name %>
+          <% borrower_last_name = User.find(@booking.user_id).last_name %>
+          <p class="m-4 listing-body"><%= image_tag "user-solid (1).svg", alt: "sport_type_icon", height: "16"%> <%= borrower_first_name %> <%= borrower_last_name %></p>
+          <% if owner == current_user && @booking.accepted == 0%>
+            <%= button_to "Confirm", action: "confirm", class: "btn-green" %>
+            <%= button_to "Reject", action: "eject", class: "btn-red" %>
+          <% elsif owner == current_user && @booking.accepted == 1 %>
+              <%= button_to "Reject", action: "reject" %>
+          <% end %>
+        </div>
+        </div>
+        <div class="px-5 d-flex justify-content-between">
+        <div>
+          Start Date: <%= @booking.start_date %>
+          <br>
+          End Date: <%= @booking.end_date %>
+        </div>
+        <div>
+          Total Price: $<%= @booking.total_price %>
+          <% if @booking.accepted == 0 %>
+            <% accepted = 'Pending' %>
+          <% elsif @booking.accepted == 1 %>
+            <% accepted = 'Accepted' %>
+          <% elsif @booking.accepted == 2 %>
+            <% accepted = 'Rejected' %>
+          <% else @booking.accepted == 3 %>
+            <% accepted = 'Completed' %>
+          <% end %>
+                    <br>
+          Status: <%= accepted %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>
