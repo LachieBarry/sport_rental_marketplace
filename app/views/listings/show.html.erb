@@ -1,24 +1,31 @@
-<h1>Listing Details</h1>
-
-<h2><%= @listing.title %></h2>
-<br>
-type: <%= @listing.sport_type %>
-<br>
-price: <%= @listing.hourly_price %>
-<br>
-desc: <%= @listing.description %>
-<br>
-<% @listing.bookings.each do |booking| %>
-  <% title = User.find(booking.user_id)%>
-  <h2><%= link_to title, listing_booking_path(booking)%></h2>
-<% end %>
-
-<%= cl_image_tag(@listing.photo.key) %>
-<div>
-add-edit-button-to-listing-show
-<%= link_to "All Listings", listings_path, class: "btn btn-success" %>
-<%= link_to "Edit", edit_listing_path(@listing), class: "btn btn-warning" %>
-<%= link_to "Delete", listing_path(@listing), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing?"}, class: 'btn btn-danger' %>
-<%= link_to "Borrow", new_listing_booking_path(@listing), class: 'btn btn-primary' %>
-
+<%= render 'shared/navbar' %>
+<%# SLIGHT BUG, some text renders over the navbar -- dont scroll down too far in demo %>
+<div class="body_container shadow vh-100">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-start p-5">
+        <div class="bg-white rounded shadow"><%= cl_image_tag(@listing.photo.key, class:" display-photo") %>
+        </div>
+        <div class="mb-2 text-dark">
+          <h5 class="m-4 listing-show-heading"> <%= @listing.title %></h5>
+          <p class="m-4 listing-subheading"> <%= image_tag "basketball-solid.svg", alt: "sport_type_icon", height: "25"%> <%= @listing.sport_type %></p>
+          <p class="m-4 listing-body">        <%= image_tag "dollar-sign-solid.svg", alt: "sport_type_icon", height: "16"%> <%= @listing.hourly_price %></p>
+          <% owner_first_name = User.find(@listing.user_id).first_name %>
+          <% owner_last_name = User.find(@listing.user_id).last_name %>
+          <p class="m-4 listing-body"><%= image_tag "user-solid (1).svg", alt: "sport_type_icon", height: "16"%> <%= owner_first_name %> <%= owner_last_name %></p>
+          <% if current_user.id != @listing.user_id %>
+            <%= link_to "Borrow", new_listing_booking_path(@listing), class: 'btn btn-green m-4' %>
+          <% else %>
+            <%= link_to "Edit", new_listing_booking_path(@listing), class: 'btn btn-green mx-4 lh-1' %>
+            <%= link_to "Delete", listing_path(@listing), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing? This will remove any bookings it has."}, class: 'btn btn-red mx-4 mt-3 lh-1' %>
+          <% end %>
+        </div>
+        </div>
+        <div class="ps-5">
+          <p class=" listing-subheading"> Description: </p>
+          <p class=" listing-body"> <%= @listing.description %> </p>
+      </div>
+    </div>
+  </div>
 </div>
+
+<%= render 'shared/footer' %>
