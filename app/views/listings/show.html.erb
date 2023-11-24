@@ -15,7 +15,8 @@
           <% if current_user.id != @listing.user_id %>
             <%= link_to "Borrow", new_listing_booking_path(@listing), class: 'btn btn-green m-4' %>
           <% else %>
-            <%= link_to "Edit", new_listing_booking_path(@listing), class: 'btn btn-green ms-4 me-6 lh-1' %>
+            <%= link_to "Edit", new_listing_booking_path(@listing), class: 'btn btn-green mx-4 lh-1' %>
+            <br>
             <%= link_to "Delete", listing_path(@listing), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this listing? This will remove any bookings it has."}, class: 'btn btn-red mx-4 mt-3 lh-1' %>
           <% end %>
         </div>
