@@ -1,8 +1,34 @@
 ALL LISTINGS
+<%= render 'shared/navbar' %>
 
-<ul>
-  <% @listings.each do |listing| %>
-  <h2><%= link_to listing.title, listing_path(listing)%></h2>
-  <% end %>
-</ul>
-<%= link_to "Create a new list", new_listing_path, class: "btn btn-success" %>
+<div class="body_container shadow">
+  <div class="container-fluid">
+    <div class="px-lg-5 pt-4">
+      <div class="row">
+        <% @listings.each do |listing| %>
+          <!-- Gallery item -->
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <%# turn into image %>
+              <div class="bg-white rounded shadow green-border"><%= cl_image_tag(listing.photo.key, class:"img-fluid card-img-top card-photo") %>
+                <div class="p-4">
+                <%# turn into button %>
+                  <h5 class="text-center mb-2 text-dark"> <%= link_to listing.title, listing_path(listing), class: "listing_title" %> </h5>
+                  <div class="d-flex justify-content-between">
+                    <p class="small text-muted mb-0"><%= listing.sport_type %></p>
+                    <p class="small text-muted mb-0">$<%= listing.hourly_price %>/hr</p>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <div class="btn btn-success w-50 mt-4 m-auto">
+                    BOOK
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End -->
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+<%= render 'shared/footer' %>
