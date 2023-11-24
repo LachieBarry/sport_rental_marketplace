@@ -1,0 +1,27 @@
+.btn-green {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  width: 120px;
+  background: #009F6B;
+  transition: 0.3s ease;
+}
+
+.btn-green:hover {
+  background: #055a3e;
+  color: white;
+}
+
+.btn-red {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  width: 120px;
+  background: #C40223;
+  transition: 0.3s ease;
+}
+
+.btn-red:hover {
+  background: #7b0317;
+  color: white;
+}
