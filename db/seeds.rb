@@ -23,8 +23,8 @@ puts "Creating users"
     email: Faker::Name.first_name + ["@gmail.com", "@hotmail.com", "@yahoo.com"].sample,
     password: '123456', # Ensure your password has at least 6 characters
     password_confirmation: '123456',
-    first_name: ["Jonesy", "Jimmy", "John", "Shazza"],
-    last_name: ["Jones", "Johns", "Jim", "Gazza"],
+    first_name: ["Jonesy", "Jimmy", "John", "Shazza"].sample,
+    last_name: ["Jones", "Johns", "Jim", "Gazza"].sample,
     phone_number: '04213456789' # Assuming a numeric phone number
   )
 end
@@ -33,8 +33,8 @@ User.create(
   email: "test@test.com",
   password: '123456', # Ensure your password has at least 6 characters
   password_confirmation: '123456',
-  first_name: ["Jonesy", "Jimmy", "John", "Shazza"],
-  last_name: ["Jones", "Johns", "Jim", "Gazza"],
+  first_name: ["Jonesy", "Jimmy", "John", "Shazza"].sample,
+  last_name: ["Jones", "Johns", "Jim", "Gazza"].sample,
   phone_number: '04213456789' # Assuming a numeric phone number
 )
 puts 'user created successfully.'
@@ -53,7 +53,7 @@ file10 = URI.open("https://res.cloudinary.com/dttxk4mnc/image/upload/v1700721946
 
 # this is a Sample listing
 listing1 = Listing.new(
-  title: 'Badminton Racquet', # Ensure this is a valid title
+  title: 'Racquet', # Ensure this is a valid title
   sport_type: 'Badmitton', # Ensure this is a valid sport type
   description: "Big game on saturday.", # Ensure this is a valid description
   hourly_price: 20,
