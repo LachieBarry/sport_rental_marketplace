@@ -52,16 +52,6 @@ file9 = URI.open("https://res.cloudinary.com/dttxk4mnc/image/upload/v1700791685/
 file10 = URI.open("https://res.cloudinary.com/dttxk4mnc/image/upload/v1700721946/development/qmmeq33gdfm6p4d9g233h4w63wgm.jpg")
 
 # this is a Sample listing
-listing1 = Listing.new(
-  title: 'Racquet', # Ensure this is a valid title
-  sport_type: 'Badmitton', # Ensure this is a valid sport type
-  description: "Big game on saturday.", # Ensure this is a valid description
-  hourly_price: 20,
-  user: User.all.sample
-
-)
-listing1.photo.attach(io: file1, filename: 'badmitton.jpg', content_type: 'image/jpg')
-listing1.save!
 
 listing2 = Listing.new(
   title: 'Cricket Bat', # Ensure this is a valid title
