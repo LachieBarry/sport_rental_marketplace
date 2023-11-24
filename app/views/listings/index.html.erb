@@ -18,9 +18,13 @@ ALL LISTINGS
                     <p class="small text-muted mb-0">$<%= listing.hourly_price %>/hr</p>
                   </div>
                   <div class="d-flex justify-content-center">
-                    <div class="btn btn-success w-50 mt-4 m-auto">
-                    BOOK
-                    </div>
+                      <% if current_user.id != listing.user_id %>
+                        <%= link_to "Borrow", new_listing_booking_path(listing), class: 'btn btn-green mt-4 m-auto' %>
+                      <% else %>
+                      <div class=" btn-white mt-4 m-auto">
+                       |
+                      </div>
+                    <% end %>
                   </div>
                 </div>
               </div>

@@ -25,3 +25,17 @@
   background: #7b0317;
   color: white;
 }
+
+.btn-white {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  width: 120px;
+  background: #ffffff;
+  transition: 0.3s ease;
+}
+
+.btn-white:hover {
+  background: #ffffff;
+  color: white;
+}
